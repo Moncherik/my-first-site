@@ -19,11 +19,11 @@
       </nav>
     </div>
   </header>
-  <div class="contents">
+  <div class="content">
     @yield('content')
   </div>
   <footer>
-    Не все права защищены
+  Не все права защищены
   </footer>
 
 
