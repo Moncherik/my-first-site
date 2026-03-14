@@ -22,10 +22,8 @@
   <div class="content">
     @yield('content')
   </div>
-  <footer>
-  Не все права защищены
-  </footer>
-
-
+  <footer class="main-footer">
+    <span>Не все права защищены</span>
+</footer>
 </body>
 </html>

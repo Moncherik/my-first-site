@@ -1,12 +1,12 @@
 body{
     margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #1f1f1f;
     color: #ffffff;
 }
 header {
     background-color: #2b2b2b;
-    padding: 20px 30px;
+    padding: 20px  30px;
     border-bottom: 2px solid #000;
 }
 header .inner {
@@ -29,7 +29,20 @@ nav ul {
     gap: 20px;
 }
 nav ul li a {
+    text-decoration: none; /* Убирает подчеркивание */
     color: azure;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block; /* Важно для работы трансформации (движения) */
+    transition: all 0.3s ease; /* Плавность для всех изменений */
+}
+nav ul li a:hover {
+    color: #ff6600; /* Цвет меняется на оранжевый */
+    transform: translateY(-3px); /* Ссылка подпрыгивает на 3 пикселя вверх */
+    text-shadow: 0 0 8px rgba(255, 102, 0, 0.4); /* Легкое свечение */
+}
+nav ul li a:active {
+    transform: translateY(-1px); /* Чуть опускается при клике, имитируя нажатие */
 }
 .content {
     min-height: 70vh;
@@ -39,14 +52,122 @@ nav ul li a {
 }
 .main-container {
     display: flex;
-    gap: 20px;
-    padding: 20px;
-
+    gap: 30px;
+    padding: 30px;
+    margin-top: 50px;
+    width: 1200px;  /* Такая же ширина, как у хедера */
+    margin: 30px auto; /* Центрируем сам контейнер на странице */
+    padding: 0;     /* Убираем лишние внутренние отступы, если нужно */
 }
-
 .main-block {
     flex: 3;
-    background: grey;
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 10px;
+}
+.main-footer {
+    display: flex;        /* Включаем Flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    padding: 20px 0;      /* Добавляем отступы сверху и снизу */
+    width: 100%;          /* Растягиваем на всю ширину */
+}
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* 1. УМЕНЬШАЕМ ВЫСОТУ */
+    /* Вместо padding: 100px или min-height: 450px поставь эти значения */
+    padding: 30px 20px;   /* Меньше отступов сверху и снизу */
+    min-height: 200px;    /* Минимальная высота, которая тебе нужна */
+    height: 250px;        /* Можно задать жесткую высоту */
+    
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+.hero .tenor-gif-embed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%; /* Это заставит её заполнить всю высоту, даже если она маленькая */
+    z-index: 1;
+}
+.hero .tenor-gif-embed iframe {
+    /* Чтобы гифка не растягивалась уродливо, а обрезалась по краям */
+    object-fit: cover !important; 
+}
+.hero-matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.hero-matrix-bg iframe {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    pointer-events: none; /* Чтобы клики проходили сквозь гифку на кнопку */
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Регулируй прозрачность тут (0.6 — 60%) */
+    z-index: 2;
+}
+.hero-content {
+    z-index: 5; /* Контент должен быть намного выше фона */
+    text-align: center;
+}
+.hero-btn {
+    display: inline-block;
+    color: #ffd700; /* Золотистый цвет (можете заменить на свой) */
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold;    /* Делаем текст жирнее */
+    font-size: 18px; 
+    padding: 12px 30;
+    transition: 0.3s;
+}
+.hero h1 {
+    font-size: 48px;
+    text-shadow: 0 0 15px rgba(0, 255, 70, 0.7); /* Зеленое свечение */
+}
+.hero-btn {
+    display: inline-block;
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 12px 35px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+}
+.aside {
+    flex: 1;         /* Правая часть уже */
+    background: #2b2b2b;
     padding: 20px;
     border-radius: 8px;
+}
+.aside h2 {
+    color: #ff6600;
+    font-size: 1.2rem;
+    margin-top: 0;
 }

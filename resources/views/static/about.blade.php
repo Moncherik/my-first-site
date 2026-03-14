@@ -1,4 +1,4 @@
-@extends('static.layots.main')
+@extends('static.layouts.main')
 
 @section('header-title')
 Про нас 
