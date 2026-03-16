@@ -12,9 +12,9 @@
       <span class="logo">Bountea</span>
       <nav>
         <ul>
-          <li><a href="/">Главнейшая</a></li>
-          <li><a href="about">Про нас</a></li>
-          <li><a href="contact">Контакты</a></li>
+          <li><a href="{{ route('home') }}">Главнейшая</a></li>
+          <li><a href="{{ route('about') }}">Про нас</a></li>
+          <li><a href="{{ route(name: 'contact') }}">Контакты</a></li>
         </ul>
       </nav>
     </div>
